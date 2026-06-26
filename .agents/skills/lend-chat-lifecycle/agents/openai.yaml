@@ -1,0 +1,7 @@
+interface:
+  display_name: "Lend Chat Lifecycle"
+  short_description: "Chat, inbox, and archive behavior"
+  default_prompt: "Use $lend-chat-lifecycle to inspect or change Lend Mobile chat behavior."
+
+policy:
+  allow_implicit_invocation: true

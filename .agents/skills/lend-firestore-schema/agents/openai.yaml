@@ -1,0 +1,7 @@
+interface:
+  display_name: "Lend Firestore Schema"
+  short_description: "Firestore schema, mirrors, and risks"
+  default_prompt: "Use $lend-firestore-schema to inspect or change Lend Mobile Firestore structures."
+
+policy:
+  allow_implicit_invocation: true

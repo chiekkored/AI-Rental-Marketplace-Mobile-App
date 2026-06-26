@@ -1,0 +1,7 @@
+interface:
+  display_name: "Lend Listing Lifecycle"
+  short_description: "Listing create, edit, and delete flow"
+  default_prompt: "Use $lend-listing-lifecycle to work on Lend Mobile listing creation or management."
+
+policy:
+  allow_implicit_invocation: true

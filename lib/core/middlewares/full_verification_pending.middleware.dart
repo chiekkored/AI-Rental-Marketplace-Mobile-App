@@ -1,0 +1,18 @@
+import 'package:get/get.dart';
+import 'package:lend/presentation/controllers/profile/profile.controller.dart';
+import 'package:lend/presentation/pages/eligibility/eligibility.page.dart';
+
+class FullVerificationPendingMiddleware extends GetMiddleware {
+  @override
+  GetPage? onPageCalled(GetPage? page) {
+    if (ProfileController.instance.hasPendingFullVerification) {
+      return GetPage(
+        name: EligibilityPage.routeName,
+        page: () => const EligibilityPage(),
+        fullscreenDialog: true,
+      );
+    }
+
+    return super.onPageCalled(page);
+  }
+}

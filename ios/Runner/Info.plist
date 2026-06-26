@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Lend</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>lend</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+
+	<!-- Google Sign-in Section -->
+	<key>GIDClientID</key>
+	<string>377430463744-1id4jf6oiv3frtqnuaivpi26jb8j7g4q.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.377430463744-1id4jf6oiv3frtqnuaivpi26jb8j7g4q</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.lend.mobile</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>lend</string>
+			</array>
+		</dict>
+	</array>
+	<!-- End of the Google Sign-in Section -->
+	
+	<!-- Google Maps -->
+	<!-- <key>GoogleMapsApiKey</key>
+	<string>$(GOOGLE_MAPS_PLATFORM_API_KEY)</string> -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Lend uses your location to show nearby listings and help you set accurate pickup or listing areas.</string>
+	<!-- End of Google Maps -->
+
+	<!-- Gal & Image Picker https://pub.dev/packages/gal -->
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Lend saves generated booking QR codes and listing images to your photo library when you choose to download them.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Lend uses your photo library so you can choose listing, profile, chat, verification, and QR images.</string>
+	<!-- End of Gal & Image Picker -->
+	<!-- Camera package https://pub.dev/packages/camera -->
+	<key>NSCameraUsageDescription</key>
+	<string>Lend uses your camera to take listing, profile, chat, and verification photos, and to scan booking QR codes.</string>
+	<!-- <key>NSMicrophoneUsageDescription</key>
+	<string>Lend needs access to your microphone to record and capture videos.</string> -->
+	<!-- End of Camera package -->
+	<!-- Firebase Emulator Suite (to allow non-HTTPS) https://firebase.flutter.dev/docs/manual-installation/ios#enabling-use-of-firebase-emulator-suite -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<!-- End of Firebase Emulator Suite -->
+	<!-- Local Auth https://pub.dev/packages/local_auth -->
+	<key>NSFaceIDUsageDescription</key>
+	<string>Lend uses Face ID to let you securely sign in and protect account actions.</string>
+	<!-- End of Local Auth -->
+	<!-- File Picker https://pub.dev/packages/file_picker -->
+	<key>UISupportsDocumentBrowser</key>
+	<true/>
+	<!-- End of File Picker -->
+</dict>
+</plist>

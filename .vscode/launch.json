@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Lend Mobile Local",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "${workspaceFolder}",
+      "program": "lib/main.dart",
+      "toolArgs": [
+        "--dart-define=ENV=local"
+      ]
+    },
+    {
+      "name": "Lend Mobile Prod",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "${workspaceFolder}",
+      "program": "lib/main.dart",
+      "toolArgs": [
+        "--dart-define=ENV=prod"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Lend Booking Flow"
+  short_description: "Booking lifecycle and QR workflow"
+  default_prompt: "Use $lend-booking-flow to analyze or modify Lend Mobile booking behavior."
+
+policy:
+  allow_implicit_invocation: true

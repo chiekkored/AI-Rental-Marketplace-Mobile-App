@@ -1,0 +1,72 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '15.5'
+
+# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+didit_sdk_ios_podspec = 'https://raw.githubusercontent.com/didit-protocol/sdk-ios/3.6.2/DiditSDK.podspec'
+
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
+  end
+
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}. Try deleting Generated.xcconfig, then run flutter pub get"
+end
+
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  # https://firebase.flutter.dev/docs/firestore/overview#4-optional-improve-ios--macos-build-times
+  # pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '8.15.0'
+ 
+  use_frameworks!
+  use_modular_headers!
+
+  # Fixes "Failed to parse JSON at file:gRPC-Core/1.65.2/gRPC-Core.podspec.json"
+  pod 'gRPC-Core', '1.69.0'
+  pod 'DiditSDK', :podspec => didit_sdk_ios_podspec
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
+end
+
+target 'NotificationServiceExtension' do
+  use_frameworks!
+  use_modular_headers!
+
+  pod 'FirebaseMessaging'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    
+    # Add Google Maps specific settings
+    # target.build_configurations.each do |config|
+    #   config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+    # end
+  end
+  # Google Maps https://pub.dev/packages/geolocator#usage
+  # if target.name == "geolocator_apple"
+  #   target.build_configurations.each do |config|
+  #     config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'BYPASS_PERMISSION_LOCATION_ALWAYS=1']
+  #   end
+  # end
+  # End of Google Maps
+end

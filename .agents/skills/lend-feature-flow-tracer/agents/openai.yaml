@@ -1,0 +1,7 @@
+interface:
+  display_name: "Lend Feature Tracer"
+  short_description: "Trace UI to Firestore behavior"
+  default_prompt: "Use $lend-feature-flow-tracer to trace a Lend Mobile feature from UI to Firestore."
+
+policy:
+  allow_implicit_invocation: true
